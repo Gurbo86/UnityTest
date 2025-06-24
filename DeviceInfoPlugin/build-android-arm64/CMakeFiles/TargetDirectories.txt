@@ -1,0 +1,3 @@
+C:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin/build-android-arm64/CMakeFiles/DeviceInfoPlugin.dir
+C:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin/build-android-arm64/CMakeFiles/edit_cache.dir
+C:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin/build-android-arm64/CMakeFiles/rebuild_cache.dir

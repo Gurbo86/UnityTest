@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\optim\Documents\Projects\Test\Plugin\DeviceInfoPlugin\build\CMakeFiles\0c9668077720d07b5e631f3422ae2767\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5B8FE5A1-CBE0-37CD-9942-682AA243DA6A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

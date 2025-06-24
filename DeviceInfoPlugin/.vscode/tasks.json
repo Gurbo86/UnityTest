@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake Generate",
+            "type": "shell",
+            "command": "cmake -S . -B build",
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "Genera los archivos de compilación con CMake."
+        },
+        {
+            "label": "Build DeviceInfoPlugin DLL",
+            "type": "shell",
+            "command": "cmake --build build --config Release",
+            "group": "build",
+            "problemMatcher": [],
+            "dependsOn": ["CMake Generate"],
+            "detail": "Compila la DLL para Unity usando CMake."
+        }
+    ]
+}

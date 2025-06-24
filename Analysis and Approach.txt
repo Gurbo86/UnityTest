@@ -1,0 +1,28 @@
+1) The first think I notice in the scene is that there's a cube left to drop to emptines by no reason.
+2) Cube script Jumping Box is aiming to the rigidbody of the second cube left to drop.
+The UI guide that is suppose to inform the player what to do is bogus. It says "Press "Jump" to jump!" and "Press "Cancel" to open the menu!"
+3) The layermask searched to detect the ground is not setted.
+4)The raycast to detect the ground is too short.
+5) The cube is rotated 90 degrees and the raycast is using the up of the transform insted of a vector up. This put me in a postion to take a desition, I can make the ground detection relative to the cube or relative to the world: 
+	@ The first one will enable the player to jump only  if the cube is has fixed rotation X and Z in the rigidbody. 
+	@ The second one is to make the detection relative to the world. 
+6) I open the StartUp scene and pressed start. An error spout inmediatly informing an error in the loading of the scene JumpingBox.
+7) After fixing it, I found that the scene was not loading for other reason.
+8) When loading the scene I get an nullreference error. 
+9) Pause object appear to be duplicated in the JumpingBox. It is suppose it handles the pause menu. It makes no sense to have this script as don't destroy on load. Also, in my experience it's unnecesary to have a second object managing a UI panel, the script can be added to the main panel holder.
+
+
+1) The first thing I will do is to fix the jumping cube and delete the extra cube. Test.
+The next thing I've done is to check the script Jumping Box. This address me to the input manager.
+2) I make the variable m_rigidbody in the script JumpingBox private. I add an Awake() method in JumpingBox and in the awake I look for the rigidbody of this object. Add a debug.LogError if rigidbody is not found. I add just for security a RequireComponent(typeOf(Rigidbody)).
+3) I create the layer mask required.
+4) I fix the length of the raycast by making the ray half the size of the cube and incorporating an offset that will be serialized for adjustment.
+5) I incorporated in the function CheckIfGorunded the posibility to evaluate ground detection from the character down vector or the world down vector. This can be configured through the serialized boolean variable groundDetectionRelativeToWorld. Fixed the ray configuration. Additionally I set the cube rotation to (0,0,0).
+6) The error addressed to the path. After fixing it the error adressed to the scene not being loaded in Build Profile/Scenes List. I checked it and there was only one scene listed, "SampleScene". I checked it and it has nothing of value. I remove it from the Scene List and added StartUp Scene and Jumping Scene.
+7) I setted the allowSceneActivation to true. (It would be nice to have the default value shown in the wiki)
+8) I check it out and the FindFirstObjectByType was not including disable objects, so I include them.
+9) I procede first to organize the UI handlers the way I consider the best, that is the script is placed in the panel and the panel components are childs of the panel.
+	@ Started with Scene Loader and SceneLoader.cs. I modify it slightly to make it work directly in the start panel. Remove the unnecesary game objects and eliminated the Scene Loader Object.
+	@ Then I proceded to modify pauseScreenManager.cs and to be directly supported by the UI Panel. Eliminated the DontDestroyOnLoad because this panel should belong to the JumpingBox scene as is the only one that can provide information on how to use it. Configure the button Cancel to work with escape and with the Start button in the gamepad. I turn all the controls to event base. Back button didn't worked, and fixed it.
+10) Cleanup
+	

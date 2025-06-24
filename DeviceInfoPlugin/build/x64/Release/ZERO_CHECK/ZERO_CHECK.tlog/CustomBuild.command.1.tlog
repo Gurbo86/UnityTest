@@ -1,0 +1,10 @@
+^C:\USERS\OPTIM\DOCUMENTS\PROJECTS\TEST\PLUGIN\DEVICEINFOPLUGIN\BUILD\CMAKEFILES\0C9668077720D07B5E631F3422AE2767\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin -BC:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin/build/DeviceInfoPlugin.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

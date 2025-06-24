@@ -1,0 +1,4 @@
+C:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin/build/CMakeFiles/DeviceInfoPlugin.dir
+C:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin/build/CMakeFiles/DeviceInfoPluginTest.dir
+C:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/optim/Documents/Projects/Test/Plugin/DeviceInfoPlugin/build/CMakeFiles/ZERO_CHECK.dir
